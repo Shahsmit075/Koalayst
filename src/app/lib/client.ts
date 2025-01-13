@@ -1,7 +1,7 @@
 import { AppType } from "@/server"
 import { hc } from "hono/client"
 import { HTTPException } from "hono/http-exception"
-import { StatusCode } from "hono/utils/http-status"
+import { StatusCode , ContentfulStatusCode} from "hono/utils/http-status"
 import superjson from "superjson"
 
 const getBaseUrl = () => {
@@ -10,18 +10,11 @@ const getBaseUrl = () => {
     return ""
   }
 
-  if (process.env.NODE_ENV === "development") {
-    return "http://localhost:3000/"
-  }
-
-  // if deployed to vercel, use vercel url
-  if (process.env.VERCEL_URL) {
-    return `https://${process.env.VERCEL_URL}`
-  }
-
-  // assume deployment to cloudflare workers otherwise, you'll get this URL after running
-  // `npm run deploy`, which deploys your server to cloudflare
-  return "https://<YOUR_DEPLOYED_WORKER_URL>/"
+  return process.env.NODE_ENV === "development"
+    ? "http://localhost:3000/"
+    : process.env.VERCEL_URL
+    ? `https://${process.env.VERCEL_URL}`
+    : "https://<YOUR_DEPLOYED_WORKER_URL>/"
 }
 
 export const baseClient = hc<AppType>(getBaseUrl(), {
@@ -29,7 +22,7 @@ export const baseClient = hc<AppType>(getBaseUrl(), {
     const response = await fetch(input, { ...init, cache: "no-store" })
 
     if (!response.ok) {
-      throw new HTTPException(response.status as StatusCode, {
+      throw new HTTPException(response.status as ContentfulStatusCode, {
         message: response.statusText,
         res: response,
       })
