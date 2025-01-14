@@ -75,8 +75,8 @@ export const MockDiscordUI = ({ children }: PropsWithChildren) => {
               <Image
                 src="/brand-asset-profile-picture.png"
                 alt="Koalayst Avatar"
-                width={39}
-                height={39}
+                width={32}
+                height={32}
                 className="object-cover rounded-full mr-3"
               />
               <span className="font-medium">Koalayst</span>
@@ -126,8 +126,8 @@ export const MockDiscordUI = ({ children }: PropsWithChildren) => {
               <Image
                 src="/brand-asset-profile-picture.png"
                 alt="Koalayst Avatar"
-                width={50}
-                height={50}
+                width={40}
+                height={40}
                 className="object-cover rounded-full mr-3"
               />
               <div className="absolute bottom-0 right-3 size-3 bg-green-500 rounded-full border-2 border-[#36393f]" />

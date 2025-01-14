@@ -95,7 +95,7 @@ const Page = () => {
                         timestamp="Today at 12:35PM"
                         badgeText="SignUp"
                         badgeColor="#43b581"
-                        title="😎New user signed up!!"
+                        title="😎 New user signed up!!"
                         content={{
                         name: "Smit Shah ",
                         email: "smit@gmail.com",
