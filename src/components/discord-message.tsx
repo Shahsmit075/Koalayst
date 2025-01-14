@@ -39,57 +39,44 @@ export const DiscordMessage = ({
   badgeText,
 }: DiscordMessageProps) => {
   return (
-    <div className="w-full flex items-start justify-start">
-      <div className="flex items-center mb-2">
-        <Image
-          src={avatarSrc}
-          alt={avatarAlt}
-          width={40}
-          height={40}
-          className="object-cover rounded-full mr-3"
-        />
+    <div className="relative flex flex-col rounded-lg bg-slate-900 p-4">
+      {/* Left accent border */}
+      <div className="absolute left-0 top-0 h-full w-1 rounded-l-lg bg-indigo-500" />
+      
+      {/* Header section */}
+      <div className="mb-2 flex items-center justify-between">
+        <div className="flex items-center gap-2">
+          <div className="rounded-full bg-slate-800 p-2">
+            <Clock className="h-4 w-4 text-slate-400" />
+          </div>
+          <span className="font-medium text-white">{title}</span>
+          {badgeText && (
+            <span className={cn(
+              "rounded-full px-2 py-0.5 text-xs font-medium ring-1 ring-inset",
+              getBadgeStyles(badgeColor)
+            )}>
+              {badgeText}
+            </span>
+          )}
+        </div>
       </div>
 
-      <div className="w-full max-w-xl">
-        <div className="flex items-center">
-          <p className="font-semibold text-white">{username}</p>
-          <span className="ml-2 px-1.5 py-0.5 text-xs font-semibold bg-brand-600 text-white rounded">
-            APP
-          </span>
-          <span className="text-gray-400 ml-1.5 text-xs font-normal">
-            {timestamp}
-          </span>
-        </div>
-
-        <div className="bg-[#2f3136] text-sm w-full rounded p-3 mb-4 mt-1.5">
-          <div className="flex flex-row items-center justify-between mb-2">
-            {badgeText ? (
-              <span
-                className={cn(
-                  "inline-flex order-2 items-center rounded-md px-2 py-1 text-xs font-medium ring-1 ring-inset",
-                  getBadgeStyles(badgeColor)
-                )}
-              >
-                {badgeText}
-              </span>
-            ) : null}
-            <p className="text-white order-1 text-base/7 font-semibold">
-              {title}
-            </p>
+      {/* Content section */}
+      <div className="mb-2 text-sm text-slate-300">
+        {Object.entries(content).map(([key, value], index) => (
+          <div key={key} className="mb-1 flex flex-col">
+            <div className="flex items-center gap-2">
+              <span className="font-medium text-slate-400">{key}:</span>
+              <span>{value}</span>
+            </div>
           </div>
+        ))}
+      </div>
 
-          {Object.entries(content).map(([key, value]) => (
-            <p key={key} className="text-[#dcddde] text-sm/6">
-              <span className="text-[#b9bbbe]">{key}:</span> {value}
-            </p>
-          ))}
-
-          <p className="text-[#72767d] text-xs mt-2 flex items-center">
-            <Clock className="size-3 mr-1" />
-            {timestamp}
-          </p>
-        </div>
+      {/* Timestamp */}
+      <div className="text-xs text-slate-500">
+        {timestamp}
       </div>
     </div>
-  )
+  );
 }
