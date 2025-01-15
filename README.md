@@ -3,25 +3,9 @@
   <h1>🐨 Koalayst</h1>
   <p><strong>Real-time SaaS Analytics & Discord Integration Platform</strong></p>
   <p>Monitor, analyze, and receive real-time notifications for your SaaS application directly in Discord.</p>
-
-  <!-- Badges -->
-  <p>
-    <img alt="Version" src="https://img.shields.io/badge/version-1.0.0-blue.svg?style=flat-square">
-    <img alt="License" src="https://img.shields.io/badge/license-MIT-green.svg?style=flat-square">
-    <img alt="PRs Welcome" src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square">
-    <img alt="Powered by Next.js" src="https://img.shields.io/badge/powered%20by-Next.js-black.svg?style=flat-square">
-  </p>
 </div>
 
 ---
-
-## 📚 Table of Contents
-- [Key Features](#key-features)
-- [Tech Stack](#tech-stack)
-- [Getting Started](#getting-started)
-- [Architecture](#architecture)
-- [Use Cases](#use-cases)
-
 ## 🌟 Overview
 Koalayst revolutionizes how you stay informed by seamlessly connecting your SaaS applications to Discord. Built for developers and SaaS owners, it delivers instant updates on key activities like new user signups, payments, or custom events—straight to your team's communication hub.
 
@@ -34,13 +18,34 @@ Koalayst revolutionizes how you stay informed by seamlessly connecting your SaaS
 - **Webhook Support**: Easy integration with existing systems
 
 ## 🛠️ Tech Stack
-- **Frontend**: Next.js 14 with TypeScript
-- **Styling**: Tailwind CSS, ShadCn
+- **Frontend & Backend**: Next.js 14 with TypeScript, Shadcn
 - **Database**: Serverless PostgreSQL (Neon)
 - **ORM**: Prisma with Neon serverless adapter
-- **Authentication**: Clerk
-- **Integration**: Discord.js
-- **API**: RESTful endpoints with TypeScript
+
+  
+## 💡 Use Cases
+
+### For SaaS Companies
+- Track user signups and onboarding progress or any cutom events 
+- Monitor subscription changes and payments
+- Receive instant notifications about critical events
+- Analyze user engagement patterns -> yet to build
+
+### For Development Teams
+- Monitor deployment status and system health
+- Track API usage and performance metrics
+- Receive error notifications in real-time
+- Collaborate on incident response
+
+### For Business Operations
+- Track sales and conversion metrics
+- Monitor customer support tickets
+- Analyze user feedback and feature requests
+- Track marketing campaign performance
+
+$${\color{red}Example}$$
+- $${\color{lightgreen}Integrate  \space an  \space API \space call  \space to \space trigger \space a \space Discord \space notification \space when \space downtime \space is \space detected \space in \space your \space SaaS \space app.}$$
+- $${\color{lightgreen}Receive  \space immediate  \space alerts, \space respond  \space quickly \space and \space a \space maintain \space high  \space service \space relaibility.}$$
 
 ## 🏗️ Architecture
 ```mermaid
@@ -142,24 +147,4 @@ npx prisma migrate dev
 ```bash
 npm run dev
 ```
-
-## 💡 Use Cases
-
-### For SaaS Companies
-- Track user signups and onboarding progress or any cutom events 
-- Monitor subscription changes and payments
-- Receive instant notifications about critical events
-- Analyze user engagement patterns -> yet to build
-
-### For Development Teams
-- Monitor deployment status and system health
-- Track API usage and performance metrics
-- Receive error notifications in real-time
-- Collaborate on incident response
-
-### For Business Operations
-- Track sales and conversion metrics
-- Monitor customer support tickets
-- Analyze user feedback and feature requests
-- Track marketing campaign performance
 ---
