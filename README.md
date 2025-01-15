@@ -43,9 +43,11 @@ Koalayst revolutionizes how you stay informed by seamlessly connecting your SaaS
 - Analyze user feedback and feature requests
 - Track marketing campaign performance
 
-$${\color{red}Example}$$
+---
+$${\color{lightskyblue}Example}$$
 - $${\color{lightgreen}Integrate  \space an  \space API \space call  \space to \space trigger \space a \space Discord \space notification \space when \space downtime \space is \space detected \space in \space your \space SaaS \space app.}$$
 - $${\color{lightgreen}Receive  \space immediate  \space alerts, \space respond  \space quickly \space and \space a \space maintain \space high  \space service \space relaibility.}$$
+---
 
 ## 🏗️ Architecture
 ```mermaid
