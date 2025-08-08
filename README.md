@@ -101,6 +101,9 @@ erDiagram
     }
 ```
 
+## System Infra (idea with respect to scale):
+![sd2](https://github.com/user-attachments/assets/68b00515-01ab-4d89-a6e0-76ebe5dec6c1)<svg id="export-svg" width="100%" xmlns="http://www.w3.org/2000/svg" class="flowchart" style="max-width: 2666.986328125px;" viewBox="0 0 2666.986328125 964.6893310546875" role="graphics-document document" aria-roledescription="flowchart-v2">
+
     
 ## 🚀 Getting Started
 
